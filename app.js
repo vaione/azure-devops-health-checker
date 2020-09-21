@@ -1,6 +1,32 @@
 const btn = document.getElementById('btn');
-const BASE_URL = `https://status.dev.azure.com/_apis/status/health?api-version=6.0-preview.1`;
+const BASE_URL = `https://cors-anywhere.herokuapp.com/https://status.dev.azure.com/_apis/status/health?api-version=6.0-preview.1`;
 const gridOutput = document.getElementById('grid');
+const generalStatusOutput = document.getElementById('general-status');
+
+async function fetchGeneralStatus() {
+  const response = await fetch(BASE_URL);
+  const json = await response.json();
+  showStatus(json);
+}
+
+function showStatus(json) {
+  let statusOutput = '';
+  statusOutput += `
+  <p>LAST UPDATED: ${json.lastUpdated} </p>
+<p>Health: ${
+    json.status.health === 'advisory' || 'something-else'
+      ? `<span class="unhealthy">${json.status.health}</span>`
+      : `<span class="healthy">${json.status.health}</span>`
+  }</p>
+<p>Message: ${
+    json.status.message === 'Service maintenance is in effect'
+      ? `<span class="unhealthy">${json.status.message}</span>`
+      : `<span class="healthy">${json.status.message}</span>`
+  }  </p>
+  `;
+  generalStatusOutput.innerHTML = statusOutput;
+}
+
 async function fetchStatus() {
   const res = await fetch(BASE_URL);
   const data = await res.json();
@@ -12,7 +38,6 @@ function showDataDOM(data) {
   data.services.forEach((item, i) => {
     output += `
   <div class="card">
-  <p>id:</p>
   <ul class="list">
     <li> SERVICE: ${item.id}</li>
     <li> COUNTRY: ${item.geographies[i].name}</li>
@@ -32,3 +57,4 @@ function showDataDOM(data) {
 
 // EVENT LISTENERS
 btn.addEventListener('click', fetchStatus);
+document.addEventListener('DOMContentLoaded', fetchGeneralStatus);
