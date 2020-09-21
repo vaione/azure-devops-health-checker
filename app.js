@@ -14,7 +14,7 @@ function showStatus(json) {
   statusOutput += `
   <p>LAST UPDATED: ${json.lastUpdated} </p>
 <p>Health: ${
-    json.status.health === 'advisory' || 'something-else'
+    json.status.health === 'advisory' || !'healthy'
       ? `<span class="unhealthy">${json.status.health}</span>`
       : `<span class="healthy">${json.status.health}</span>`
   }</p>
