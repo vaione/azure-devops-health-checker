@@ -12,6 +12,9 @@ function showLoader(message) {
   }
 }
 
+/*=============================
+FETCH STATUS ON DOM LOAD START 
+*=============================*/
 async function fetchGeneralStatus() {
   showLoader('true');
   const response = await fetch(BASE_URL);
@@ -38,16 +41,22 @@ function showStatus(json) {
   `;
   generalStatusOutput.innerHTML = statusOutput;
 }
+/*===========================
+FETCH STATUS ON DOM LOAD END 
+*============================*/
 
+/*=================================
+FETCH STATUS ON DOM BTN CLICK START  
+*=================================*/
 async function fetchStatus() {
-  showLoader('true')
+  showLoader('true');
   const res = await fetch(BASE_URL);
   const data = await res.json();
   showDataDOM(data);
 }
 
 function showDataDOM(data) {
-  showLoader('false')
+  showLoader('false');
 
   let output = '';
   data.services.forEach((item, i) => {
@@ -69,6 +78,9 @@ function showDataDOM(data) {
   });
   gridOutput.innerHTML = output;
 }
+/*=================================
+FETCH STATUS ON DOM BTN CLICK END  
+*=================================*/
 
 // EVENT LISTENERS
 btn.addEventListener('click', fetchStatus);
