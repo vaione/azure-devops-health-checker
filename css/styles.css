@@ -108,4 +108,25 @@ body {
   display: none;
 }
 
+@media (max-width: 1280px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

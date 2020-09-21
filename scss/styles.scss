@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -71,8 +70,7 @@ body {
   grid-gap: 25px;
 }
 
-
-.card { 
+.card {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -84,31 +82,30 @@ body {
   border: 1px solid var(--border-color);
 }
 
-.list { 
+.list {
   list-style-type: none;
 }
 
-
-.list li { 
+.list li {
   font-size: 20px;
   text-align: center;
   margin-top: 0.5em;
-  line-height: 1.7
+  line-height: 1.7;
 }
 
-
-.healthy { 
+.healthy {
   color: green;
 }
 
-.unhealthy { 
+.unhealthy {
   color: red;
 }
 
-
-.loading-img { 
-  width: 200px; 
+.loading-img {
+  width: 200px;
   border-radius: 10px;
   margin: 0 auto;
   display: none;
 }
+
+@import "mobile"; // media queries
