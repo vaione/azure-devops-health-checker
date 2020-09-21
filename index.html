@@ -6,6 +6,35 @@
     <meta charset="UTF-8" />
   </head>
   <body>
+    <header class="header">
+      <h1>Azure Devops Health Checker</h1>
+      <p>Hit Submit to get a listing of all Azure services</p>
+    </header> 
+    <div class="general-status">
+      <p>Health</p>
+      <p>Message: </p>
+      <p>TODO: put tunary op here</p>
+    </div>
+
+
+    <div class="container">
+      <input type="submit" placeholder="submit" class="btn" id="btn" /> 
+    </div>
+    <div class="wrapper">
+
+
+
+
+      <div class="card">
+        <p>id:</p>
+        <ul class="list">
+          <li>${id}</li>
+          <li>${name}</li>
+          <li>${health}</li>
+        </ul>
+      </div>
+
+    </div>
 
 
 
@@ -13,7 +42,6 @@
 
 
 
-    
     <script src="app.js"></script>
   </body>
 </html>
