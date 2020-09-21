@@ -46,7 +46,7 @@ FETCH STATUS ON DOM LOAD END
 *============================*/
 
 /*=================================
-FETCH STATUS ON DOM BTN CLICK START  
+FETCH STATUS ON BTN CLICK START  
 *=================================*/
 async function fetchStatus() {
   showLoader('true');
@@ -79,7 +79,7 @@ function showDataDOM(data) {
   gridOutput.innerHTML = output;
 }
 /*=================================
-FETCH STATUS ON DOM BTN CLICK END  
+FETCH STATUS ON BTN CLICK END  
 *=================================*/
 
 // EVENT LISTENERS
