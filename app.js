@@ -1,5 +1,5 @@
 const btn = document.getElementById('btn');
-const BASE_URL = `https://cors-anywhere.herokuapp.com/https://status.dev.azure.com/_apis/status/health?api-version=6.0-preview.1`;
+const BASE_URL = `https://status.dev.azure.com/_apis/status/health?api-version=6.0-preview.1`;
 const gridOutput = document.getElementById('grid');
 const generalStatusOutput = document.getElementById('general-status');
 
